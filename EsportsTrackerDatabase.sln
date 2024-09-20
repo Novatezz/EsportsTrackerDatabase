@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EsportsTrackerDatabase", "EsportsTrackerDatabase.csproj", "{A9710DB7-AC8F-4DDE-85BA-75A5B5A255E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataManagement", "..\DataManagement\DataManagement.csproj", "{C7392BB2-F1D2-4120-B25B-A2EBF382657C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9710DB7-AC8F-4DDE-85BA-75A5B5A255E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9710DB7-AC8F-4DDE-85BA-75A5B5A255E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9710DB7-AC8F-4DDE-85BA-75A5B5A255E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9710DB7-AC8F-4DDE-85BA-75A5B5A255E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7392BB2-F1D2-4120-B25B-A2EBF382657C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7392BB2-F1D2-4120-B25B-A2EBF382657C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7392BB2-F1D2-4120-B25B-A2EBF382657C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7392BB2-F1D2-4120-B25B-A2EBF382657C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58189C91-C92C-453D-A75E-9A272279262A}
+	EndGlobalSection
+EndGlobal

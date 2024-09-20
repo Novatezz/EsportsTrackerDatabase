@@ -1,0 +1,87 @@
+﻿<Window x:Class="EsportsTrackerDatabase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EsportsTrackerDatabase"
+        mc:Ignorable="d"
+        Title="KiDD-Esports Tournament Database Tools" Height="650" Width="1000"
+        WindowStartupLocation="CenterScreen" >
+    <Grid>
+        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="1,.1" StartPoint="1,0">
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FFA1C1B1" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <Style x:Key="WhiteButton" TargetType="Button">
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="BorderThickness" Value="1"/>
+            </Style>
+        </Grid.Resources>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            
+            <Button  Margin="5" Height="25" Width="85" Click="Result_Click" Style="{StaticResource WhiteButton}">Team Results
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Label Margin="20"></Label>
+            <Button Margin="5" Height="25" Width="85" Click="Team_Click" Style="{StaticResource WhiteButton}">Team List
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Margin="5" Height="25" Width="85" Click="Event_Click" Style="{StaticResource WhiteButton}">Event List
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Margin="5" Height="25" Width="85" Click="Game_Click" Style="{StaticResource WhiteButton}">Game List
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Label Margin="20"></Label>
+            <Button x:Name="btnExport" Margin="5" Height="25" Width="85" HorizontalAlignment="Left" 
+Style="{StaticResource WhiteButton}" Click="btnExport_Click" >Export Report
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>            
+            <Label Margin="20"></Label>
+            <Button Margin="5" Height="25" Width="85" Name="btnHelp" Style="{StaticResource WhiteButton}" Click="btnHelp_Click">Help
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+        
+        <Label VerticalAlignment="Center" HorizontalAlignment="Right" Margin="5">KIDD-Esports Tracker</Label>
+        <ContentControl x:Name="conMain" Grid.Row="1"/>
+
+
+
+    </Grid>
+</Window>

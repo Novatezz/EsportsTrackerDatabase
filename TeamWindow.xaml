@@ -1,0 +1,92 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EsportsTrackerDatabase"
+             xmlns:DataManagement="clr-namespace:DataManagement;assembly=DataManagement" 
+             xmlns:Collections="clr-namespace:System.Collections;assembly=System.Collections.NonGeneric" 
+             x:Class="EsportsTrackerDatabase.TeamWindow"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFA1C1B1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="3" >
+            
+            <Label Content="Team:"/>
+            <ComboBox x:Name="cbTeamName" Margin="5" SelectionChanged="cbTeamName_SelectionChanged"
+                      IsEditable="True" IsReadOnly="False"/>
+            <Label Content="Contact:"/>
+            <TextBox x:Name="txtContactName" Margin="5" IsReadOnly="True"/>
+            <Label Content="Phone Number:"/>
+            <TextBox x:Name="txtPhoneNum" Margin="5" IsReadOnly="True"/>
+            <Label Content="Email"/>
+            <TextBox x:Name="txtEmail" Margin="5" IsReadOnly="True"/>
+            <Label Content="Total Points:"/>
+            <TextBox x:Name="txtPoints" Margin="5" IsReadOnly="True"/>
+            
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom">
+            <Button x:Name="btnEdit" HorizontalAlignment="Left" 
+        Style="{StaticResource WhiteButton}" Click="btnEdit_Click">Edit Team
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="btnNew" HorizontalAlignment="Left" 
+        Style="{StaticResource WhiteButton}" Click="btnNew_Click">New Team
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="btnDel" HorizontalAlignment="Left" 
+        Style="{StaticResource BlackButton}" Click="btnDel_Click">Delete Team
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+        <DataGrid x:Name="dgvTeam" Grid.Column="1" Grid.Row="1" Margin="5" AutoGenerateColumns="False"
+                  BorderBrush="#FFA1C1B1" HorizontalAlignment="Left" CanUserResizeRows="False"
+                  RowHeaderWidth="0" CanUserAddRows="False" VerticalGridLinesBrush="#FFA1C1B1" 
+                  HorizontalGridLinesBrush="#FFA1C1B1" Background="White" IsReadOnly="True" SelectionChanged="dgvTeam_SelectionChanged" >
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="White" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FFA1C1B1"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Team Name" Binding="{Binding TeamName}" Width="1*" />
+                <DataGridTextColumn Header="Team Contact" Binding="{Binding ContactName}" Width="1*" />
+                <DataGridTextColumn Header="Phone Number" Binding="{Binding ContactPhone}" Width="1*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding ContactEmail}" Width="1*"/>
+                <DataGridTextColumn Header="Total Points" Binding="{Binding Points}" Width="1*"/>
+
+            </DataGrid.Columns>
+            <DataGrid.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </DataGrid.Resources>
+        </DataGrid>
+    </Grid>
+</UserControl>
